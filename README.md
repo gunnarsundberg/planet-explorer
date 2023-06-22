@@ -1,7 +1,7 @@
 # Star Wars Planet Explorer
 ![Death star](./src/lib/assets/deathstar-logo.png)
 
-A minimal app built using SvelteKit that allows users to see a list of all planets in the Star Wars universe and explore their details (uses SWAPI for data). The planet details shows basic info about the planet, plus geology data, the names of all characters from the planet, and all films the planet is featured in.
+A minimal app built using SvelteKit that allows users to see a list of all planets in the Star Wars universe and explore their details (uses SWAPI for data). The planet details page shows basic info about the planet, plus geology data, the names of all characters from the planet, and all films the planet is featured in.
 
 Fun fact: I generally only build backends & this is my first time using Svelte 😮
 
