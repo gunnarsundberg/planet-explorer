@@ -1,16 +1,16 @@
-# SvelteKit Demo app
+# Star Wars Planet Explorer
 
-The official demo app for SvelteKit, hosted on Vercel.
+A minimal app built using SvelteKit that allows users to see a list of all planets in the Star Wars universe and explore their details (uses SWAPI for data). The planet details shows basic info about the planet, plus geology data, the names of all characters from the planet, and all films the planet is featured in.
 
-## Deploy Your Own
+Fun fact: I generally only build backends & this is my first time using Svelte 😮
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmain%2Fexamples%2Fsveltekit-1&project-name=sveltekit-vercel&repository-name=sveltekit-vercel&demo-title=SvelteKit%20%2B%20Vercel&demo-url=https%3A%2F%2Fsveltekit-template.vercel.app%2F)
+## Demo
 
-_Live Example: https://sveltekit-template.vercel.app_
+View a live demo [here](https://planet-explorer-gray.vercel.app).
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
@@ -34,3 +34,8 @@ You can preview the production build with `npm run preview`.
 Once deployed on Vercel, you can benefit from [Speed Insights](https://vercel.com/docs/concepts/speed-insights) simply by navigating to Vercel's dashboard, clicking on the 'Speed Insights' tab, and enabling the product.
 
 You will get data once your application will be re-deployed and will receive visitors.
+
+## Sources
+
+* UI Elements: [Flowbite Svelte](https://flowbite-svelte.com)
+* Star Wars Icons: [Icons8](https://icons8.com/icons/set/star-wars)
