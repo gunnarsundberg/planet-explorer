@@ -1,59 +1,44 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+    import { onMount } from 'svelte';
+    //import { ListPlaceholder } from 'flowbite-svelte'
+	import PlanetTable from './PlanetTable.svelte';
+    
+    // planet data
+    let planets: Planet[] = [];
+    // boolean representing whether all data has been loaded
+    let planetsLoaded = false;
+
+    async function getPlanets() {
+        let next:string;
+
+        const res = await fetch('https://swapi.dev/api/planets/');
+        const data = await res.json();
+        next = data.next;
+        planets = data.results;
+        while (next !== null) {
+            const res = await fetch(next);
+            const data = await res.json();
+            next = data.next;
+            console.log(next);
+            console.log(data.results);
+            planets.push(...data.results);
+            planets = planets;
+        }
+        planetsLoaded = true;
+    }
+
+    onMount(async () => {
+        await getPlanets();
+    });
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<div class= "flex-auto min-w-0 lg:static lg:max-h-full lg:overflow-visible dark:divide-gray-700">
+    <!--
+    {#if planets.length === 0}
+        <ListPlaceholder divClass="p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700"/>
+    {:else}
+        <PlanetList {planets} {planetsLoaded} />
+    {/if}
+    -->
+    <PlanetTable {planets} {planetsLoaded} />
+</div>

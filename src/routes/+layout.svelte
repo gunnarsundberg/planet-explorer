@@ -1,9 +1,9 @@
 <script>
+	import '../app.postcss';
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
-	import './styles.css';
+	import Navbar from './Navbar.svelte';
 
 	/** @type {import('./$types').LayoutServerData} */
 	export let data;
@@ -17,8 +17,8 @@
 	}
 </script>
 
-<div class="app">
-	<Header />
+<div class="app bg-white dark:bg-slate-800">
+	<Navbar />
 
 	<main>
 		<slot />
