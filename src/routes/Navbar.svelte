@@ -9,12 +9,12 @@
       <img
         src={lightlogo}
         class="block dark:hidden mr-3 h-6 sm:h-9"
-        alt="Flowbite Logo"
+        alt="Rebel Logo"
       />
       <img
         src={darklogo}
         class="hidden dark:block mr-3 h-6 sm:h-9"
-        alt="Flowbite Logo"
+        alt="Empire Logo"
       />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
         Planet Explorer
