@@ -6,6 +6,7 @@
 
 <Navbar let:hidden>
 	<NavBrand href="/">
+    <!-- Display the Empire logo in dark mode, else Rebel logo ;-) -->
 		<img src={lightlogo} class="block dark:hidden mr-3 h-6 sm:h-9" alt="Rebel Logo" />
 		<img src={darklogo} class="hidden dark:block mr-3 h-6 sm:h-9" alt="Empire Logo" />
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
